@@ -1,0 +1,26 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="jqmlist" label="List" enabled="TRUE">
+		<fed:fce.field.select name="type" label="Show" items="{0: {0: 'ul', 1: 'Unordered '}, 1: {0: 'ol', 1: 'Ordered '}}" />
+		<fed:fce.field.select name="inset" label="Inset" items="{0: {0: 'false', 1: 'No'}, 1: {0: 'true', 1: 'Yes'}}" />
+		<fed:fce.grid>
+			<fed:fce.grid.row>
+				<fed:fce.grid.column >
+					<fed:fce.content name="items" label="List items" />
+				</fed:fce.grid.column>
+			</fed:fce.grid.row>
+		</fed:fce.grid>
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+  
+</f:section>
+ 
+<f:section name="Main">
+	<{type} data-role="listview" data-inset="{inset}">
+		<fed:fce.renderContent area="items" />
+	</{type}>
+</f:section>

@@ -1,0 +1,23 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="Page" />
+<fed:script src="http://code.jquery.com/jquery-1.6.2.min.js"   />
+<fed:script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js" />
+
+
+<fed:script src="typo3conf/ext/mobileappfactory/Resources/Public/js/dbfunctions.js"  />
+<fed:script src="typo3conf/ext/jqmfluidtemplates/Resources/Public/js/jquery.form.js"  />
+<fed:script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.js"  />
+<fed:style href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css"  />
+<fed:script src="phonegap.js"  />
+
+
+
+
+<f:render section="main" />
+<div data-role="page" data-theme="{theme.page}">
+	<f:render section="header" />
+	<div data-role="content">
+		<fed:page.renderContent column="0" />
+	</div> 
+</div>

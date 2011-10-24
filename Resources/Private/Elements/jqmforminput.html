@@ -1,0 +1,21 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="jqmforminput" label="form: input" enabled="TRUE">
+		<fed:fce.field.input name="label" label="label" eval="trim" />
+		<fed:fce.field.input name="name" label="field name" eval="trim" />
+		<fed:fce.field.select name="type" label="Type" items="{0: {0: 'text', 1: 'Text'}, 1: {0: 'password', 1: 'Password'}, 2: {0: 'submit', 1: 'submit'}, 3: {0: 'hidden', 1: 'Hidden'}}" />
+		
+		
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+ {button.text} 
+</f:section>
+ 
+<f:section name="Main">
+	<label for="{name}">{label}</label>
+	<input id="{name}" name="{name}" type="{type}" />
+</f:section>

@@ -1,0 +1,28 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="jqmcollapsible" label="Collapsible" enabled="TRUE">
+		<fed:fce.field.input name="title" label="Header" eval="trim" />
+		<fed:fce.field.select name="taglevel" label="Header level" items="{0: {0: 'h1', 1: 'H1'}, 2: {0: 'h2', 1: 'H2'}, 3: {0: 'h3', 1: 'H3'}, 4: {0: 'h4', 1: 'H4'}, 5: {0: 'h5', 1: 'H5'}}" />
+		<fed:fce.field.checkbox name="collapsed" label="Collapsed"  />
+		<fed:fce.grid>
+			<fed:fce.grid.row>
+				<fed:fce.grid.column >
+					<fed:fce.content name="items" label="content" />
+				</fed:fce.grid.column>
+			</fed:fce.grid.row>
+		</fed:fce.grid>
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+  
+</f:section>
+ 
+<f:section name="Main">
+	<div data-role="collapsible" data-collapsed="{collapsed}" >
+		<{taglevel}>{title}</{taglevel}>
+		<fed:fce.renderContent area="items" />
+	</div>
+</f:section>

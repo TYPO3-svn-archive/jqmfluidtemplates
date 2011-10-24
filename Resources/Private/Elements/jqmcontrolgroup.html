@@ -1,0 +1,25 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="jqmcontrolgroup" label="Control group" enabled="TRUE">
+		<fed:fce.field.select name="type" label="Show" items="{0: {0: 'vertical', 1: 'Vertical'}, 1: {0: 'horizontal', 1: 'Horizontal'}}" />
+		<fed:fce.grid>
+			<fed:fce.grid.row>
+				<fed:fce.grid.column >
+					<fed:fce.content name="items" label="Control group" />
+				</fed:fce.grid.column>
+			</fed:fce.grid.row>
+		</fed:fce.grid>
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+  
+</f:section>
+ 
+<f:section name="Main">
+	<div data-role="controlgroup" data-type="{type}">
+		<fed:fce.renderContent area="items" />
+	</div>
+</f:section>

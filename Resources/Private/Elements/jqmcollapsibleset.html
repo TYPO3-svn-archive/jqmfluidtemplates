@@ -1,0 +1,24 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="jqmcollapsibleset" label="Collapsible set" enabled="TRUE">
+		<fed:fce.grid>
+			<fed:fce.grid.row>
+				<fed:fce.grid.column >
+					<fed:fce.content name="items" label="Collapsibles" />
+				</fed:fce.grid.column>
+			</fed:fce.grid.row>
+		</fed:fce.grid>
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+  
+</f:section>
+ 
+<f:section name="Main">
+	<div data-role="collapsible-set">
+		<fed:fce.renderContent area="items" />
+	</div>
+</f:section>

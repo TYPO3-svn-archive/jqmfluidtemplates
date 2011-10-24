@@ -1,0 +1,28 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="jqmform" label="form" enabled="TRUE">
+		<fed:fce.field.input name="name" label="name" eval="trim" />
+		<fed:fce.field.input name="action" label="Action" eval="trim" />
+		
+		<fed:fce.grid>
+			<fed:fce.grid.row>
+				<fed:fce.grid.column >
+					<fed:fce.content name="items" label="form items" />
+				</fed:fce.grid.column>
+			</fed:fce.grid.row>
+		</fed:fce.grid>
+		
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+ {name} 
+</f:section>
+ 
+<f:section name="Main">
+	<form action="{action}" >
+		<fed:fce.renderContent area="items" />
+	</form>
+</f:section>

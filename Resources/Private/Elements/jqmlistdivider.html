@@ -1,0 +1,16 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="jqmlistdivider" label="List: divider" enabled="TRUE">
+		<fed:fce.field.input name="button.text" label="Divider text" eval="trim" />
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+  
+</f:section>
+ 
+<f:section name="Main">
+	<li data-role="listdivider" style="list-style: none;">{button.text}</li>
+</f:section>

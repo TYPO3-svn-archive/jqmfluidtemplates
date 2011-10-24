@@ -1,0 +1,21 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="jqmmenulist" label="Menu List" enabled="TRUE">
+		<fed:fce.field.input name="menutitle" label="Menu title" eval="trim" />
+		<fed:fce.field.select name="type" label="Show" items="{0: {0: 'ul', 1: 'Unordered '}, 1: {0: 'ol', 1: 'Ordered '}}" />
+		
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+  
+</f:section>
+ 
+<f:section name="Main">
+	<{type} data-role="listview" >
+		<li>{menutitle}</li>
+		<f:cObject typoscriptObjectPath="lib.tx_jqmfluidtemplates.listmenu" />
+	</{type}>
+</f:section>

@@ -1,0 +1,36 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+
+<f:layout name="Page" />
+
+<f:section name="Configuration">
+	<fed:page id="default-page">
+		<fed:page.field.checkbox name="header.visible" label="show header" />
+		<fed:page.field.checkbox name="header.back" label="show backbutton" />
+		<fed:page.field.checkbox name="header.home" label="show homebutton" />
+		
+		<fed:comment comment="These values are grouped into objects according to their context" />
+		<fed:page.field.select name="theme.page" label="Theme page" items="{0: '',1: 'a',2: 'b',3: 'c',4: 'd',5: 'e'}" />
+		<fed:page.field.select name="theme.header" label="Theme header" items="{0: '',1: 'a',2: 'b',3: 'c',4: 'd',5: 'e'}" />
+		
+		
+		
+	</fed:page>
+</f:section>
+
+<f:section name="main">
+	
+	
+	
+</f:section>
+
+
+<f:section name="header">
+	<f:if condition="{header.visible}">
+		<div data-role="header" data-theme="{theme.header}" > 
+			<f:if condition="{header.back}"><a data-icon="arrow-l" data-rel="back">Back</a></f:if>
+			<h1>{page.title}</h1>
+			<f:if condition="{header.home}"><a href="index.html" data-icon="home" >Home</a></f:if>
+		</div>
+	</f:if>
+</f:section>
+

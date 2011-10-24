@@ -1,0 +1,51 @@
+{namespace fed=Tx_Fed_ViewHelpers}
+{namespace phonegap=Tx_Phonegap_ViewHelpers}
+
+<f:layout name="FCE" />
+<f:section name="Configuration">
+	<fed:fce id="jqmcompass" label="Phonegap: Compass" enabled="TRUE">
+		<fed:fce.field.checkbox name="showRose" label="Show compass rose"  />
+		
+	</fed:fce>
+</f:section>
+
+<f:section name="Preview">
+	<f:if condition="{showRose}">
+		<img src="/typo3conf/ext/jqmfluidtemplates/Resources/Public/Icons/compass.png" width="100" height="100"/>
+	</f:if>	
+	<f:if condition="{showNum}">
+		100&deg;<br>
+	</f:if>
+	
+</f:section>
+ 
+<f:section name="Main">
+	<div class="compass" style="text-align:center;overflow:hidden">
+		<f:if condition="{showRose}">
+			<f:then>
+				<f:image style="width:100%;height:auto" class="rose" id="cpRose" alt="" src="EXT:jqmfluidtemplates/Resources/Public/Icons/compass.png"/>
+				<div style="z-order:1000;width:100px;height:25px;margin: 0 auto;" class="readout" id="cpReadout"></div>
+				
+			</f:then><f:else>
+				<div class="readout" id="cpReadout">0&deg;</div>
+			</f:else>
+		</f:if>
+		
+		
+	</div>
+	<phonegap:compass frequency="500">
+		<phonegap:success>
+			
+			<f:if condition="{showRose}">
+				
+				var dg=(1*heading.trueHeading)+"deg";
+				$('#cpRose').css('-webkit-transform',  'rotate('+dg+')');
+			</f:if>
+			$('#cpReadout').html(heading.trueHeading+'&deg;');
+			
+		</phonegap:success>
+		<phonegap:error>
+			
+		</phonegap:error>
+	</phonegap:compass>	
+</f:section>

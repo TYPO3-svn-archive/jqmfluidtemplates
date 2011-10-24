@@ -1,0 +1,39 @@
+plugin.tx_fed {
+	fce.jqmfluidtemplates {
+		templateRootPath = EXT:jqmfluidtemplates/Resources/Private/Elements/
+		partialRootPath = EXT:jqmfluidtemplates/Resources/Private/Partials/
+		layoutRootPath = EXT:jqmfluidtemplates/Resources/Private/Layouts/
+		
+	}
+	page.jqmfluidtemplates {
+		templateRootPath = EXT:jqmfluidtemplates/Resources/Private/Templates/
+		partialRootPath = EXT:jqmfluidtemplates/Resources/Private/Partials/
+		layoutRootPath = EXT:jqmfluidtemplates/Resources/Private/Layouts/
+	}
+}
+
+config {
+   absRefPrefix = /
+   disablePrefixComment = 1
+   inlineStylesToTempFile = 0
+   pageTitleFirst = 1
+   removeDefaultJS = 1
+   doctype = <!DOCTYPE html>
+}
+tt_content.stdWrap.innerWrap.cObject.default=
+
+lib.tx_jqmfluidtemplates.listmenu = HMENU
+lib.tx_jqmfluidtemplates.listmenu.special= directory
+lib.tx_jqmfluidtemplates.listmenu.1 = TMENU
+lib.tx_jqmfluidtemplates.listmenu.1 {
+  noBlur = 1
+  wrap =|
+  expAll = 0
+  NO.allWrap = <li>|</li>
+  RO < .NO
+  RO = 1
+  CUR < .NO
+  CUR = 1
+  CUR.allWrap = <li>|</li>
+  ACT < .CUR
+}
